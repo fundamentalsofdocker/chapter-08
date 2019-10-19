@@ -1,0 +1,17 @@
+version: "2.4"
+services:
+  web:
+    build: 
+      context: web
+      dockerfile: Dockerfile
+    image: fundamentalsofdocker/ch11-web:2.0
+    ports:
+      - 80:3000
+  db:
+    build: db
+    image: fundamentalsofdocker/ch11-db:2.0
+    volumes:
+      - pets-data:/var/lib/postgresql/data
+
+volumes:
+  pets-data:
