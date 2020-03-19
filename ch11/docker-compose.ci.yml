@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  web:
+    build: web
+    ports:
+      - 5000:3000
+    environment:
+      POSTGRES_PASSWORD: ci-pass
+  db:
+    build: db
+    environment:
+      POSTGRES_PASSWORD: ci-pass
+  
